@@ -1,0 +1,60 @@
+#include<iostream>
+using namespace std;
+
+//Fraction class declaration.-Filename:Fraction.cpp
+class Fraction 
+{
+private:
+	int numerator;
+	int denominator;
+
+public:
+	Fraction();
+	Fraction(int numer);
+	Fraction(int numer, int denom);
+	~Fraction() { }
+	void print() const;
+
+};
+
+void Fraction::print() const
+{
+	cout << numerator << "/" << denominator;
+}
+
+Fraction::Fraction()
+{
+	numerator = 0;
+	denominator = 1;
+}
+
+Fraction::Fraction(int numen)
+{
+	numerator = numen;
+	denominator = 1;
+}
+
+Fraction::Fraction(int numen,int denom)
+{
+	numerator = numen;
+	denominator = denom;
+}
+
+void main()
+{
+	Fraction frac1;
+	cout << "Fraction 1 contains:";
+	frac1.print();
+	cout << endl;
+
+	Fraction frac2(4);
+	cout << "Fraction 2 contains:";
+	frac2.print();
+	cout << endl;
+
+	Fraction frac3(5,8);
+	cout << "Fraction 3 contains:";
+	frac3.print();
+	cout << endl;
+
+}
