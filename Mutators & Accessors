@@ -1,0 +1,52 @@
+#include<iostream>
+#include<iomanip>
+using namespace std;
+
+//Fraction class declaration.-Filename:Account.cpp
+class Account
+{
+private:
+	double balance;
+public:
+	Account();
+	double getBalance() const;
+	void deposit(double amount);
+	void withdraw(double amount);
+};
+
+Account::Account()
+{
+	balance = 0.0;
+}
+
+double Account::getBalance() const
+{
+	return balance;
+}
+
+void Account::deposit(double amount)
+{
+	balance += amount;
+}
+
+void Account::withdraw(double amount)
+{
+	balance -= amount;
+}
+
+void main()
+{
+	Account acc;
+
+	cout << "Your account balance is: "
+		<< setw(5) << acc.getBalance() << endl;
+
+	acc.deposit(100.0);
+	cout << "Your account balance is: "
+		<< setw(5) << acc.getBalance() << endl;
+
+	acc.withdraw(50.0);
+	cout << "Your account balance is: "
+		<< setw(5) << acc.getBalance() << endl;
+
+}
